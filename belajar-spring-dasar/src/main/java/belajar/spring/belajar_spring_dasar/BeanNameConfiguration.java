@@ -6,15 +6,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 @Configuration
-public class PrimaryBeanConfiguration {
+public class BeanNameConfiguration {
 
     @Primary
-    @Bean
+    @Bean(value = "FooFirst")
     public Foo foo1(){
         return new Foo();
     }
 
-    @Bean
+    @Bean(value = "FooSecond")
     public Foo foo2(){
         return new Foo();
     }

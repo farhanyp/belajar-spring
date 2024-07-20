@@ -7,21 +7,21 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class PrimaryBeanTest {
+public class BeanNameTest {
 
     private ApplicationContext applicationContext;
 
     @BeforeEach
     public void setUp(){
-        applicationContext = new AnnotationConfigApplicationContext(PrimaryBeanConfiguration.class);
+        applicationContext = new AnnotationConfigApplicationContext(BeanNameConfiguration.class);
     }
 
     @Test
     void TestGetBeanPrimary(){
 
         Foo foo = applicationContext.getBean(Foo.class);
-        Foo foo1 = applicationContext.getBean("foo1", Foo.class);
-        Foo foo2 = applicationContext.getBean("foo2", Foo.class);
+        Foo foo1 = applicationContext.getBean("FooFirst", Foo.class);
+        Foo foo2 = applicationContext.getBean("FooSecond", Foo.class);
 
         Assertions.assertSame(foo, foo1);
         Assertions.assertNotSame(foo, foo2);
