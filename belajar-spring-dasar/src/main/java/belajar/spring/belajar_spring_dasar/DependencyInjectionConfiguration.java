@@ -28,7 +28,7 @@ public class DependencyInjectionConfiguration {
     }
 
     @Bean
-    public FooBar foobar(@Qualifier("fooSecond") Foo foo, Bar bar){
+    public FooBar foobar(Foo foo, Bar bar){
         return new FooBar(foo, bar);
     }
 
